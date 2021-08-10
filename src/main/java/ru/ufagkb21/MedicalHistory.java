@@ -5,12 +5,14 @@ public class MedicalHistory {
     public Treatment treatment;
     private QrCode qrCode;
 
-    public MedicalHistory () {
+    public MedicalHistory (Person person, Treatment treatment) {
 
     }
 
     public static void main(String[] args) {
 
+        Person person = new Person("Stark","Veronika");
+        MedicalHistory medicalHistory = new MedicalHistory(person, new Treatment(001));
 
 
     }

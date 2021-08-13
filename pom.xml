@@ -42,7 +42,7 @@
                 </executions>
                 <configuration>
                     <executable>maven</executable>
-                    <mainClass>ru.ufagkb21.MedicalHistory</mainClass>
+                    <mainClass>ru.ufagkb21.CaseHistory</mainClass>
                 </configuration>
             </plugin>
 

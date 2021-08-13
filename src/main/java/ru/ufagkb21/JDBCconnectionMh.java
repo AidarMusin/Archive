@@ -3,26 +3,35 @@ package ru.ufagkb21;
 import java.sql.*;
 
 public class JDBCconnectionMh {
+    private String userName = "root";
+    private String password = "#)1180Aidar";
+    private String connectionUrl = "jdbc:mysql://localhost:3306/medical_history";
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        String userName = "root";
-        String password = "#)1180Aidar";
-        String connectionUrl = "jdbc:mysql://localhost:3306/medical_history";
+
+    public void addUser (String login, String userPassword, String userEmail, String userFullName) throws ClassNotFoundException {
+
         Class.forName("com.mysql.cj.jdbc.Driver");
         try (Connection connection = DriverManager.getConnection(connectionUrl, userName, password);
              Statement statement = connection.createStatement()) {
-            //statement.executeUpdate("CREATE TABLE Mh_department (id_otd INTEGER NOT NULL AUTO_INCREMENT, otd_name VARCHAR(40) NOT NULL, otd_numberPhone VARCHAR(4), otd_zav VARCHAR(40), PRIMARY_key(id_otd))");
+            statement.executeUpdate("INSERT INTO users () values (login, userPassword)")
+            //INSERT INTO users (login, pass) values('TestUser', '123456')
 
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM Mh_users");
-            while (resultSet.next()) {
-                System.out.print(resultSet.getInt(1) + " ");
-                System.out.print(resultSet.getString(2) + " ");
-                System.out.print(resultSet.getString(3) + " ");
-                System.out.print(resultSet.getString(5) + " ");
-                System.out.println();
-            }
 
-            System.out.println("we're connected");
+
+
+            statement.executeUpdate("drop TABLE mh_casehistory " );
+
+
+//            ResultSet resultSet = statement.executeQuery("SELECT * FROM Mh_users");
+//            while (resultSet.next()) {
+//                System.out.print(resultSet.getInt(1) + " ");
+//                System.out.print(resultSet.getString(2) + " ");
+//                System.out.print(resultSet.getString(3) + " ");
+//                System.out.print(resultSet.getString(5) + " ");
+//                System.out.println();
+//            }
+
+            System.out.println("have a connect");
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

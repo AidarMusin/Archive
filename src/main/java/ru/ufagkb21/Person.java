@@ -8,7 +8,6 @@ public class Person {
     private String firstName;
     private String patronymic;
     private Calendar dateOfBirth;
-    private String passportNumber;
 
     public Person(String lastName, String firstName) {
 
